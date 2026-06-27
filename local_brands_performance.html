@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Local Brands Performance — YTD 2025 | Al Rugaib Furniture</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --red:       #C0272D; --red-dim:   rgba(192,39,45,0.10); --red-mid:   rgba(192,39,45,0.18);
+    --dark:      #1C1C1C; --dark2:     #2E2E2E; --mid:       #6B6B6B; --light:     #A8A8A8;
+    --bg:        #FFFFFF; --bg2:       #F7F5F2; --bg3:       #EEEBE6; --border:    #E2DDD7;
+    --green:     #2A7A58; --green-dim: rgba(42,122,88,0.10);
+    --amber:     #B86A10; --amber-dim: rgba(184,106,16,0.10);
+  }
+  html, body { background:#DEDAD5; font-family:'Inter',sans-serif; }
+  .deck { display:flex; flex-direction:column; align-items:center; gap:6px; padding:32px 16px; }
+  .slide { width:1280px; height:720px; background:var(--bg); position:relative; overflow:hidden; flex-shrink:0; display:flex; flex-direction:column; border:1px solid var(--border); }
+  .nav { position:absolute; bottom:22px; right:36px; display:flex; gap:6px; z-index:10; }
+  .nav span { width:6px; height:6px; border-radius:50%; background:var(--border); display:block; }
+  .nav span.on { background:var(--red); }
+  .bar { position:absolute; left:0; top:0; bottom:0; width:5px; background:var(--red); }
+  .sh { padding:38px 60px 0 68px; display:flex; align-items:flex-start; justify-content:space-between; }
+  .eye { font-size:10px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--red); margin-bottom:8px; }
+  .stit { font-family:'Playfair Display',serif; font-size:34px; color:var(--dark); line-height:1.1; }
+  .ssub { font-size:12.5px; color:var(--mid); margin-top:7px; }
+  .divv { width:40px; height:3px; background:var(--red); margin:14px 60px 0 68px; }
+  .body { padding:24px 60px 0 68px; flex:1; }
+  .krow { display:flex; gap:16px; margin-bottom:22px; }
+  .kcard { background:var(--bg2); border:1px solid var(--border); border-radius:6px; padding:16px 20px; flex:1; }
+  .kcard.rk { border-top:3px solid var(--red); }
+  .kcard .kl { font-size:10px; color:var(--light); letter-spacing:1.5px; text-transform:uppercase; margin-bottom:8px; }
+  .kcard .kv { font-size:28px; font-weight:700; color:var(--dark); }
+  .kcard .kv .sar { font-size:13px; color:var(--mid); margin-right:3px; }
+  .kcard .ks { font-size:11px; color:var(--mid); margin-top:3px; }
+  .kcard.rk .kv { color:var(--red); }
+  .bch { display:flex; flex-direction:column; gap:8px; }
+  .br { display:flex; align-items:center; gap:11px; }
+  .bl { font-size:12px; color:var(--dark); width:105px; flex-shrink:0; text-align:right; font-weight:500; }
+  .btr { flex:1; height:24px; background:var(--bg2); border-radius:3px; overflow:hidden; border:1px solid var(--border); }
+  .bf { height:100%; border-radius:3px; display:flex; align-items:center; padding-left:9px; }
+  .bf span { font-size:11px; font-weight:600; color:#fff; white-space:nowrap; }
+  .bm { font-size:11px; color:var(--mid); width:105px; flex-shrink:0; }
+  .bdg { font-size:9px; font-weight:700; padding:1px 6px; border-radius:10px; letter-spacing:0.5px; margin-left:4px; }
+  .dpl { background:var(--red-dim); color:var(--red); }
+  .dsc { background:var(--green-dim); color:var(--green); }
+  .dwt { background:var(--amber-dim); color:var(--amber); }
+  .drv { background:#F2F2F2; color:var(--light); }
+  .dt { width:100%; border-collapse:collapse; font-size:12.5px; }
+  .dt th { font-size:9.5px; letter-spacing:1.5px; text-transform:uppercase; color:var(--light); font-weight:600; padding:0 12px 10px; border-bottom:2px solid var(--border); text-align:left; }
+  .dt th.r, .dt td.r { text-align:right; }
+  .dt td { padding:9px 12px; border-bottom:1px solid var(--border); color:var(--dark); }
+  .dt tr:last-child td { border-bottom:none; }
+  .dt tr:hover td { background:var(--bg2); }
+  .dt .vn { font-weight:600; }
+  .pill { display:inline-block; padding:2px 9px; border-radius:10px; font-size:10.5px; font-weight:600; }
+  .pr { background:var(--red-dim); color:var(--red); }
+  .pg { background:var(--green-dim); color:var(--green); }
+  .pa { background:var(--amber-dim); color:var(--amber); }
+  .pb { background:var(--red-mid); color:var(--red); border:1px solid rgba(192,39,45,0.25); }
+  .tc { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+  .ic { background:var(--bg2); border:1px solid var(--border); border-radius:6px; padding:18px 20px; }
+  .ic.ir { border-left:3px solid var(--red); }
+  .ic.ig { border-left:3px solid var(--green); }
+  .ic.ia { border-left:3px solid var(--amber); }
+  .ic.ix { border-left:3px solid var(--border); }
+  .ic .it { font-size:9.5px; letter-spacing:2px; text-transform:uppercase; font-weight:700; margin-bottom:8px; }
+  .ic p { font-size:12px; color:var(--dark2); line-height:1.65; }
+  .rrgrid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+  .rrc { background:var(--bg2); border:1px solid var(--border); border-radius:6px; padding:13px 15px; }
+  .rrc .rn { font-size:12px; font-weight:600; color:var(--dark); margin-bottom:6px; }
+  .rrc .rt { height:5px; background:var(--bg3); border-radius:3px; overflow:hidden; margin-bottom:6px; }
+  .rrc .rf { height:100%; border-radius:3px; }
+  .rrc .rv { font-size:20px; font-weight:700; }
+  .rrc .ra { font-size:10px; color:var(--light); }
+  .bot { position:absolute; bottom:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--red) 0%,transparent 50%); }
+  .fn { font-size:10.5px; color:var(--light); margin-top:10px; }
+  .tier-grid { display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr; gap:14px; height:468px; }
+  .tcard { background:var(--bg2); border:1px solid var(--border); border-radius:6px; padding:18px 20px; display:flex; flex-direction:column; }
+  .tcard.tr { border-top:3px solid var(--red); }
+  .tcard.tg { border-top:3px solid var(--green); }
+  .tcard.ta { border-top:3px solid var(--amber); }
+  .tcard.tx { border-top:3px solid var(--border); }
+  .tcard .tt { font-size:9.5px; letter-spacing:2px; text-transform:uppercase; font-weight:700; margin-bottom:9px; }
+  .tcard .chips { display:flex; gap:8px; margin-bottom:10px; flex-wrap:wrap; }
+  .tcard .chip { padding:2px 10px; border-radius:10px; font-size:11.5px; font-weight:600; }
+  .tcard p { font-size:11.5px; color:var(--dark2); line-height:1.65; flex:1; }
+  .tcard .tstats { display:flex; gap:20px; margin-top:11px; padding-top:11px; border-top:1px solid var(--border); }
+  .tcard .tstats .sv { font-size:16px; font-weight:700; }
+  .tcard .tstats .sl { font-size:10px; color:var(--light); }
+  #s1 { justify-content:center; }
+  #s1 .ci { padding:0 72px; position:relative; z-index:2; }
+  #s1 .ck { font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--red); margin-bottom:16px; }
+  #s1 .ct { font-family:'Playfair Display',serif; font-size:58px; color:var(--dark); line-height:1.05; }
+  #s1 .ct span { color:var(--red); }
+  #s1 .cs { font-size:14px; color:var(--mid); margin-top:16px; max-width:520px; line-height:1.7; }
+  #s1 .cm { display:flex; gap:52px; margin-top:44px; }
+  #s1 .mi .mv { font-size:34px; font-weight:700; color:var(--dark); }
+  #s1 .mi .mv span { font-size:17px; color:var(--mid); }
+  #s1 .mi .ml { font-size:10px; color:var(--light); letter-spacing:1px; margin-top:4px; text-transform:uppercase; }
+  #s1 .logo { position:absolute; right:60px; top:50%; transform:translateY(-50%); text-align:right; line-height:1.8; }
+  #s1 .logo strong { font-family:'Playfair Display',serif; font-size:20px; color:var(--dark); display:block; }
+  #s1 .logo span { font-size:13px; color:var(--mid); }
+  #s1 .date { position:absolute; bottom:32px; right:60px; font-size:11px; color:var(--light); letter-spacing:1px; }
+  #s1 .bg-lines { position:absolute; right:0; top:0; bottom:0; width:340px; overflow:hidden; opacity:0.06; background:repeating-linear-gradient(-45deg,var(--red) 0px,var(--red) 2px,transparent 2px,transparent 20px); }
+  #s10 { justify-content:center; }
+  #s10 .ci { padding:0 80px; position:relative; z-index:2; text-align:center; margin:auto 0; }
+</style>
+</head>
+<body>
+<div class="deck">
+
+<!-- S1 COVER -->
+<div class="slide" id="s1">
+  <div class="bar"></div><div class="bg-lines"></div>
+  <div class="ci">
+    <div class="ck">3P Local Brands Marketplace · E-Commerce Division</div>
+    <div class="ct">Local Brands<br><span>Performance Review</span></div>
+    <div class="cs">YTD Performance Analysis · Commission Framework · Catalog Governance · Strategic Allocation for H2 2026</div>
+    <div class="cm">
+      <div class="mi"><div class="mv">2.72<span> M SAR</span></div><div class="ml">Total Net Sales YTD</div></div>
+      <div class="mi"><div class="mv">1,310</div><div class="ml">Total Orders</div></div>
+      <div class="mi"><div class="mv">9</div><div class="ml">Active Vendors</div></div>
+    </div>
+  </div>
+  <div class="logo"><strong>Al Rugaib Furniture</strong><span>مفروشات الرقيب</span></div>
+  <div class="date">Prepared · June 2026 &nbsp;|&nbsp; Confidential — Internal Use Only</div>
+  <div class="bot"></div>
+  <div class="nav"><span class="on"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+</div>
+
+<!-- S2 SNAPSHOT -->
+<div class="slide" id="s2">
+  <div class="bar"></div>
+  <div class="sh"><div><div class="eye">Portfolio Overview</div><div class="stit">Program Snapshot</div><div class="ssub">YTD 2025 · All 9 Active Vendors · All figures in SAR</div></div></div>
+  <div class="divv"></div>
+  <div class="body">
+    <div class="krow">
+      <div class="kcard rk"><div class="kl">Total Net Sales</div><div class="kv"><span class="sar">SAR</span>2,721,757</div><div class="ks">Across 9 vendors</div></div>
+      <div class="kcard"><div class="kl">Total Orders</div><div class="kv">1,310</div><div class="ks">Vendor-fulfilled</div></div>
+      <div class="kcard"><div class="kl">Avg. Order Value</div><div class="kv"><span class="sar">SAR</span>2,078</div><div class="ks">Net basis</div></div>
+      <div class="kcard"><div class="kl">Commission Earned</div><div class="kv"><span class="sar">SAR</span>500,661</div><div class="ks">Current blended avg 18.4%</div></div>
+      <div class="kcard"><div class="kl">Active SKUs</div><div class="kv">8,470</div><div class="ks">Shopify catalog · active only</div></div>
+    </div>
+    <div class="bch">
+      <div class="br"><div class="bl">Alhome</div><div class="btr"><div class="bf" style="width:100%;background:var(--red)"><span>SAR 1,145,692</span></div></div><div class="bm">430 orders</div></div>
+      <div class="br"><div class="bl">Royal</div><div class="btr"><div class="bf" style="width:51%;background:var(--red)"><span>SAR 583,817</span></div></div><div class="bm">204 orders</div></div>
+      <div class="br"><div class="bl">Otath</div><div class="btr"><div class="bf" style="width:26.5%;background:#3A7A5A"><span>SAR 303,644</span></div></div><div class="bm">121 orders <span class="bdg dsc">SCALE</span></div></div>
+      <div class="br"><div class="bl">In-House</div><div class="btr"><div class="bf" style="width:18.2%;background:#3A7A5A"><span>SAR 208,855</span></div></div><div class="bm">145 orders</div></div>
+      <div class="br"><div class="bl">LOWHA</div><div class="btr"><div class="bf" style="width:16.3%;background:#3A7A5A"><span>SAR 186,325</span></div></div><div class="bm">216 orders <span class="bdg dsc">SCALE</span></div></div>
+      <div class="br"><div class="bl">Oak</div><div class="btr"><div class="bf" style="width:10.6%;background:#B8820A"><span>SAR 121,356</span></div></div><div class="bm">38 orders <span class="bdg dwt">WATCH</span></div></div>
+      <div class="br"><div class="bl">Back Comfort</div><div class="btr"><div class="bf" style="width:6.8%;background:#B8820A"><span>SAR 78,439</span></div></div><div class="bm">44 orders <span class="bdg dwt">WATCH</span></div></div>
+      <div class="br"><div class="bl">SMEG</div><div class="btr"><div class="bf" style="width:4.3%;background:#AAAAAA"><span>SAR 48,826</span></div></div><div class="bm">27 orders <span class="bdg drv">REVIEW</span></div></div>
+      <div class="br"><div class="bl">WEFT</div><div class="btr"><div class="bf" style="width:3.9%;background:#AAAAAA"><span>SAR 44,803</span></div></div><div class="bm">85 orders <span class="bdg drv">REVIEW</span></div></div>
+    </div>
+  </div>
+  <div class="bot"></div>
+  <div class="nav"><span></span><span class="on"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+</div>
+
+<!-- S3 CONCENTRATION -->
+<div class="slide" id="s3">
+  <div class="bar"></div>
+  <div class="sh"><div><div class="eye">Revenue Concentration</div><div class="stit">Two Vendors Own 64% of Portfolio Revenue</div><div class="ssub">Concentration creates structural dependency — catalog governance and commission reform are the de-risking levers</div></div></div>
+  <div class="divv"></div>
+  <div class="body">
+    <div class="tc" style="align-items:start">
+      <div>
+        <table class="dt">
+          <thead><tr><th>Vendor</th><th class="r">Net Sales (SAR)</th><th class="r">Share</th><th class="r">Orders</th><th>Signal</th></tr></thead>
+          <tbody>
+            <tr><td class="vn">Alhome</td><td class="r">1,145,692</td><td class="r">42.1%</td><td class="r">430</td><td><span class="pill pg">Top Performer</span></td></tr>
+            <tr><td class="vn">Royal</td><td class="r">583,817</td><td class="r">21.5%</td><td class="r">204</td><td><span class="pill pg">Top Performer</span></td></tr>
+            <tr><td class="vn">Otath</td><td class="r">303,644</td><td class="r">11.2%</td><td class="r">121</td><td><span class="pill pg">Scale</span></td></tr>
+            <tr><td class="vn">In-House</td><td class="r">208,855</td><td class="r">7.7%</td><td class="r">145</td><td><span class="pill pg">Internal</span></td></tr>
+            <tr><td class="vn">LOWHA</td><td class="r">186,325</td><td class="r">6.9%</td><td class="r">216</td><td><span class="pill pg">Scale</span></td></tr>
+            <tr><td class="vn">Oak</td><td class="r">121,356</td><td class="r">4.5%</td><td class="r">38</td><td><span class="pill pa">Watch</span></td></tr>
+            <tr><td class="vn">Back Comfort</td><td class="r">78,439</td><td class="r">2.9%</td><td class="r">44</td><td><span class="pill pa">Watch</span></td></tr>
+            <tr><td class="vn">SMEG</td><td class="r">48,826</td><td class="r">1.8%</td><td class="r">27</td><td><span class="pill pr">Review</span></td></tr>
+            <tr><td class="vn">WEFT</td><td class="r">44,803</td><td class="r">1.6%</td><td class="r">85</td><td><span class="pill pr">Review</span></td></tr>
+          </tbody>
+        </table>
+        <div class="fn">* Signal reflects Net Sales, Return Rate, and Order Velocity combined</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:13px;padding-top:2px">
+        <div class="ic ir"><div class="it" style="color:var(--red)">Concentration Insight</div><p>Alhome + Royal generate <strong>SAR 1.73M (63.6%)</strong> of total portfolio net sales. Both are the highest-velocity vendors in the portfolio and the primary candidates for priority sourcing investment in H2 2026.</p></div>
+        <div class="ic ig"><div class="it" style="color:var(--green)">Healthy Second Tier</div><p>Otath, LOWHA, and In-House collectively contribute <strong>SAR 699K (25.7%)</strong> with solid order volume and low return friction. Catalog expansion and increased marketing exposure are the growth lever here.</p></div>
+        <div class="ic ix"><div class="it" style="color:var(--light)">Bottom Tail Risk</div><p>WEFT and SMEG together deliver only <strong>SAR 93.6K (3.4%)</strong> of net sales. Their SKU-to-order ratio and return rates do not justify continued platform priority without measurable improvement.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="bot"></div>
+  <div class="nav"><span></span><span></span><span class="on"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+</div>
+
+<!-- S4 RETURN RATES -->
+<div class="slide" id="s4">
+  <div class="bar"></div>
+  <div class="sh"><div><div class="eye">Service Quality Signal</div><div class="stit">Return Rate by Vendor</div><div class="ssub">Returns as % of Gross Sales · Vendor-side fulfillment across all 9 partners</div></div></div>
+  <div class="divv"></div>
+  <div class="body">
+    <div class="rrgrid" style="margin-bottom:16px">
+      <div class="rrc"><div class="rn">WEFT</div><div class="rt"><div class="rf" style="width:100%;background:var(--red)"></div></div><div class="rv" style="color:var(--red)">11.2%</div><div class="ra">SAR 5,719 returned · 85 orders</div></div>
+      <div class="rrc"><div class="rn">Oak</div><div class="rt"><div class="rf" style="width:96%;background:var(--red)"></div></div><div class="rv" style="color:var(--red)">10.8%</div><div class="ra">SAR 15,119 returned · 38 orders</div></div>
+      <div class="rrc"><div class="rn">Otath</div><div class="rt"><div class="rf" style="width:63%;background:var(--amber)"></div></div><div class="rv" style="color:var(--amber)">7.0%</div><div class="ra">SAR 22,843 returned · 121 orders</div></div>
+      <div class="rrc"><div class="rn">Royal</div><div class="rt"><div class="rf" style="width:44%;background:var(--amber)"></div></div><div class="rv" style="color:var(--amber)">4.9%</div><div class="ra">SAR 30,411 returned · 204 orders</div></div>
+      <div class="rrc"><div class="rn">Back Comfort</div><div class="rt"><div class="rf" style="width:44%;background:var(--amber)"></div></div><div class="rv" style="color:var(--amber)">4.9%</div><div class="ra">SAR 4,198 returned · 44 orders</div></div>
+      <div class="rrc"><div class="rn">Alhome</div><div class="rt"><div class="rf" style="width:17%;background:var(--green)"></div></div><div class="rv" style="color:var(--green)">1.9%</div><div class="ra">SAR 21,869 returned · 430 orders</div></div>
+      <div class="rrc"><div class="rn">SMEG</div><div class="rt"><div class="rf" style="width:17%;background:var(--green)"></div></div><div class="rv" style="color:var(--green)">1.9%</div><div class="ra">SAR 965 returned · 27 orders</div></div>
+      <div class="rrc"><div class="rn">In-House</div><div class="rt"><div class="rf" style="width:15%;background:var(--green)"></div></div><div class="rv" style="color:var(--green)">1.7%</div><div class="ra">SAR 3,623 returned · 145 orders</div></div>
+      <div class="rrc"><div class="rn">LOWHA</div><div class="rt"><div class="rf" style="width:13%;background:var(--green)"></div></div><div class="rv" style="color:var(--green)">1.5%</div><div class="ra">SAR 2,943 returned · 216 orders</div></div>
+    </div>
+    <div style="display:flex;gap:14px">
+      <div class="ic ir" style="flex:1"><div class="it" style="color:var(--red)">High Friction — WEFT & Oak</div><p>Both exceed 10% RR. Under the new commission framework, both vendors auto-escalate to 23% penalty rate. Combined return value SAR 20,838 — direct operational cost with no current contractual recovery mechanism.</p></div>
+      <div class="ic ia" style="flex:1"><div class="it" style="color:var(--amber)">Monitor — Otath & Royal</div><p>Otath at 7.0% sits exactly on the 23% penalty trigger threshold. Royal at 4.9% is within safe range but carries the portfolio's highest absolute return value at SAR 30,411.</p></div>
+      <div class="ic ig" style="flex:1"><div class="it" style="color:var(--green)">Benchmark — Alhome & LOWHA</div><p>Sub-2% return rates at high volume. Alhome at 430 orders and 1.9% RR is the operational benchmark the new SLA framework is designed around.</p></div>
+    </div>
+  </div>
+  <div class="bot"></div>
+  <div class="nav"><span></span><span></span><span></span><span class="on"></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+</div>
+
+<!-- S5 SCORECARD -->
+<div class="slide" id="s5">
+  <div class="bar"></div>
+  <div class="sh"><div><div class="eye">Full Vendor Scorecard</div><div class="stit">Performance Matrix · All 9 Vendors</div><div class="ssub">Net Sales · Orders · AOV · Return Rate · Current Commission · New Flat Rate · Change</div></div></div>
+  <div class="divv"></div>
+  <div class="body">
+    <table class="dt">
+      <thead><tr><th>Vendor</th><th class="r">Net Sales (SAR)</th><th class="r">Orders</th><th class="r">AOV (SAR)</th><th class="r">Return Rate</th><th class="r">Current %</th><th class="r">New Flat %</th><th class="r">Change</th><th>Recommendation</th></tr></thead>
+      <tbody>
+        <tr><td class="vn">Alhome</td><td class="r">1,145,692</td><td class="r">430</td><td class="r">2,664</td><td class="r" style="color:var(--green)">1.9%</td><td class="r">18%</td><td class="r" style="font-weight:700;color:var(--red)">20%</td><td class="r" style="color:var(--red)">+2%</td><td><span class="pill pg">Priority — Scale</span></td></tr>
+        <tr><td class="vn">Royal</td><td class="r">583,817</td><td class="r">204</td><td class="r">2,862</td><td class="r" style="color:var(--amber)">4.9%</td><td class="r">18%</td><td class="r" style="font-weight:700;color:var(--red)">20%</td><td class="r" style="color:var(--red)">+2%</td><td><span class="pill pg">Priority — Scale</span></td></tr>
+        <tr><td class="vn">Otath</td><td class="r">303,644</td><td class="r">121</td><td class="r">2,510</td><td class="r" style="color:var(--amber)">7.0%</td><td class="r">20%</td><td class="r" style="font-weight:700;color:var(--dark)">20%</td><td class="r" style="color:var(--light)">—</td><td><span class="pill pg">Scale + Monitor RR</span></td></tr>
+        <tr><td class="vn">In-House</td><td class="r">208,855</td><td class="r">145</td><td class="r">1,440</td><td class="r" style="color:var(--green)">1.7%</td><td class="r">18%</td><td class="r" style="font-weight:700;color:var(--red)">20%</td><td class="r" style="color:var(--red)">+2%</td><td><span class="pill pg">Maintain</span></td></tr>
+        <tr><td class="vn">LOWHA</td><td class="r">186,325</td><td class="r">216</td><td class="r">863</td><td class="r" style="color:var(--green)">1.5%</td><td class="r">20%</td><td class="r" style="font-weight:700;color:var(--dark)">20%</td><td class="r" style="color:var(--light)">—</td><td><span class="pill pg">Scale + Expand Catalog</span></td></tr>
+        <tr><td class="vn">Oak</td><td class="r">121,356</td><td class="r">38</td><td class="r">3,194</td><td class="r" style="color:var(--red)">10.8%</td><td class="r">18%</td><td class="r" style="font-weight:700;color:var(--red)">20% → 23%*</td><td class="r" style="color:var(--red)">+2% now</td><td><span class="pill pa">Conditional — Fix RR</span></td></tr>
+        <tr><td class="vn">Back Comfort</td><td class="r">78,439</td><td class="r">44</td><td class="r">1,783</td><td class="r" style="color:var(--amber)">4.9%</td><td class="r">20%</td><td class="r" style="font-weight:700;color:var(--dark)">20%</td><td class="r" style="color:var(--light)">—</td><td><span class="pill pa">Watch — Volume Low</span></td></tr>
+        <tr><td class="vn">SMEG</td><td class="r">48,826</td><td class="r">27</td><td class="r">1,808</td><td class="r" style="color:var(--green)">1.9%</td><td class="r">20%</td><td class="r" style="font-weight:700;color:var(--dark)">20%</td><td class="r" style="color:var(--light)">—</td><td><span class="pill pr">Review — Restructure</span></td></tr>
+        <tr><td class="vn">WEFT</td><td class="r">44,803</td><td class="r">85</td><td class="r">527</td><td class="r" style="color:var(--red)">11.2%</td><td class="r">15%</td><td class="r" style="font-weight:700;color:var(--red)">20% → 23%*</td><td class="r" style="color:var(--red)">+5% now</td><td><span class="pill pr">Review — Restructure</span></td></tr>
+      </tbody>
+    </table>
+    <div class="fn" style="margin-top:8px">* 23% penalty rate auto-triggers when Return Rate exceeds 7% for 60 consecutive days. Reverts to 20% flat when RR drops below 5% for 30 consecutive days. Commission on final customer-paid price including delivery, net of confirmed returns.</div>
+  </div>
+  <div class="bot"></div>
+  <div class="nav"><span></span><span></span><span></span><span></span><span class="on"></span><span></span><span></span><span></span><span></span><span></span></div>
+</div>
+
+<!-- S6 TOP SKUs BY PRICE -->
+<div class="slide" id="s6">
+  <div class="bar"></div>
+  <div class="sh"><div><div class="eye">Catalog Intelligence · Slide 1 of 2</div><div class="stit">Top 15 SKUs by Unit Price</div><div class="ssub">Highest AOV active SKUs with stock on hand · Source: Shopify catalog · All figures in SAR</div></div></div>
+  <div class="divv"></div>
+  <div class="body">
+    <table class="dt">
+      <thead><tr><th>#</th><th>Vendor</th><th>Category</th><th>SKU</th><th class="r">Price (SAR)</th><th class="r">Was (SAR)</th><th class="r">Discount</th><th class="r">Stock</th><th class="r">Stock Value (SAR)</th></tr></thead>
+      <tbody>
+        <tr><td style="color:var(--light)">01</td><td class="vn">SMEG</td><td>Refrigerators</td><td style="font-family:monospace;font-size:11.5px">FAB28RBL5GA</td><td class="r">11,901</td><td class="r">—</td><td class="r">—</td><td class="r">14</td><td class="r">166,619</td></tr>
+        <tr><td style="color:var(--light)">02</td><td class="vn">SMEG</td><td>Refrigerators</td><td style="font-family:monospace;font-size:11.5px">FAB28RDUJ5GA</td><td class="r">11,901</td><td class="r">—</td><td class="r">—</td><td class="r">15</td><td class="r">178,520</td></tr>
+        <tr><td style="color:var(--light)">03</td><td class="vn" style="color:var(--red)">Royal</td><td>Dining Tables</td><td style="font-family:monospace;font-size:11.5px">RF-HJ236</td><td class="r">9,865</td><td class="r">11,187</td><td class="r" style="color:var(--green)">12%</td><td class="r">100</td><td class="r">986,500</td></tr>
+        <tr><td style="color:var(--light)">04</td><td class="vn" style="color:var(--red)">Royal</td><td>Dining Tables</td><td style="font-family:monospace;font-size:11.5px">RF-HJ235</td><td class="r">9,565</td><td class="r">11,187</td><td class="r" style="color:var(--green)">14%</td><td class="r">100</td><td class="r">956,500</td></tr>
+        <tr><td style="color:var(--light)">05</td><td class="vn" style="color:var(--red)">Royal</td><td>Dining Tables</td><td style="font-family:monospace;font-size:11.5px">RF-HJ233</td><td class="r">8,971</td><td class="r">11,187</td><td class="r" style="color:var(--green)">20%</td><td class="r">99</td><td class="r">888,129</td></tr>
+        <tr><td style="color:var(--light)">06</td><td class="vn" style="color:var(--red)">Royal</td><td>Dining Tables</td><td style="font-family:monospace;font-size:11.5px">RF-HJ234</td><td class="r">8,923</td><td class="r">11,187</td><td class="r" style="color:var(--green)">20%</td><td class="r">100</td><td class="r">892,300</td></tr>
+        <tr><td style="color:var(--light)">07</td><td class="vn" style="color:var(--red)">Royal</td><td>Dining Tables</td><td style="font-family:monospace;font-size:11.5px">RF-HJ238</td><td class="r">7,721</td><td class="r">11,187</td><td class="r" style="color:var(--green)">31%</td><td class="r">100</td><td class="r">772,100</td></tr>
+        <tr><td style="color:var(--light)">08</td><td class="vn" style="color:var(--red)">Royal</td><td>Sofas & Loveseats</td><td style="font-family:monospace;font-size:11.5px">RF-HJ418</td><td class="r">7,621</td><td class="r">10,827</td><td class="r" style="color:var(--green)">30%</td><td class="r">100</td><td class="r">762,100</td></tr>
+        <tr><td style="color:var(--light)">09</td><td class="vn" style="color:var(--red)">Royal</td><td>Sofas & Loveseats</td><td style="font-family:monospace;font-size:11.5px">RF-HJ419</td><td class="r">7,542</td><td class="r">10,221</td><td class="r" style="color:var(--green)">26%</td><td class="r">99</td><td class="r">746,658</td></tr>
+        <tr><td style="color:var(--light)">10</td><td class="vn" style="color:var(--red)">Royal</td><td>Sofas & Loveseats</td><td style="font-family:monospace;font-size:11.5px">RF-HJ420</td><td class="r">7,541</td><td class="r">9,806</td><td class="r" style="color:var(--green)">23%</td><td class="r">100</td><td class="r">754,100</td></tr>
+        <tr><td style="color:var(--light)">11</td><td class="vn" style="color:var(--red)">Royal</td><td>Dining Tables</td><td style="font-family:monospace;font-size:11.5px">RF-HJ106</td><td class="r">7,432</td><td class="r">8,400</td><td class="r" style="color:var(--green)">12%</td><td class="r">100</td><td class="r">743,200</td></tr>
+        <tr><td style="color:var(--light)">12</td><td class="vn" style="color:var(--red)">Royal</td><td>Dining Tables</td><td style="font-family:monospace;font-size:11.5px">RF-HJ108</td><td class="r">7,432</td><td class="r">10,443</td><td class="r" style="color:var(--green)">29%</td><td class="r">100</td><td class="r">743,200</td></tr>
+        <tr><td style="color:var(--light)">13</td><td class="vn" style="color:var(--red)">Royal</td><td>Dining Tables</td><td style="font-family:monospace;font-size:11.5px">RF-HJ105</td><td class="r">7,231</td><td class="r">9,414</td><td class="r" style="color:var(--green)">23%</td><td class="r">99</td><td class="r">715,869</td></tr>
+        <tr><td style="color:var(--light)">14</td><td class="vn" style="color:var(--red)">Royal</td><td>Dining Tables</td><td style="font-family:monospace;font-size:11.5px">RF-HJ107</td><td class="r">7,132</td><td class="r">9,650</td><td class="r" style="color:var(--green)">26%</td><td class="r">100</td><td class="r">713,200</td></tr>
+        <tr><td style="color:var(--light)">15</td><td class="vn" style="color:var(--red)">Royal</td><td>Sofas & Loveseats</td><td style="font-family:monospace;font-size:11.5px">RF-HJ421</td><td class="r">6,999</td><td class="r">9,806</td><td class="r" style="color:var(--green)">29%</td><td class="r">100</td><td class="r">699,900</td></tr>
+      </tbody>
+    </table>
+    <div class="fn">Active SKUs with stock > 0 only. Royal dominates 13 of 15 positions — direct reflection of its #2 revenue rank and high AOV catalog.</div>
+  </div>
+  <div class="bot"></div>
+  <div class="nav"><span></span><span></span><span></span><span></span><span></span><span class="on"></span><span></span><span></span><span></span><span></span></div>
+</div>
+
+<!-- S7 CROSS-VENDOR SKUs -->
+<div class="slide" id="s7">
+  <div class="bar"></div>
+  <div class="sh"><div><div class="eye">Catalog Intelligence · Slide 2 of 2</div><div class="stit">Top SKUs — Cross-Vendor View</div><div class="ssub">Top 2 highest-price active SKUs per vendor · Full catalog breadth signal · All figures in SAR</div></div></div>
+  <div class="divv"></div>
+  <div class="body">
+    <table class="dt">
+      <thead><tr><th>Vendor</th><th>Dynamics Entity</th><th>Category</th><th>SKU</th><th class="r">Price (SAR)</th><th class="r">Stock</th><th class="r">Stock Value (SAR)</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td class="vn" style="color:var(--red)">Royal</td><td style="font-size:11px;color:var(--mid)">Mohammed A. Al Yousef Est.</td><td>Dining Tables</td><td style="font-family:monospace;font-size:11.5px">RF-HJ236</td><td class="r">9,865</td><td class="r">100</td><td class="r">986,500</td><td><span class="pill pg">Priority</span></td></tr>
+        <tr><td class="vn" style="color:var(--red)">Royal</td><td style="font-size:11px;color:var(--mid)">Mohammed A. Al Yousef Est.</td><td>Dining Tables</td><td style="font-family:monospace;font-size:11.5px">RF-HJ235</td><td class="r">9,565</td><td class="r">100</td><td class="r">956,500</td><td><span class="pill pg">Priority</span></td></tr>
+        <tr><td class="vn">SMEG</td><td style="font-size:11px;color:var(--mid)">Awad Badi Al Nahas Trading</td><td>Refrigerators</td><td style="font-family:monospace;font-size:11.5px">FAB28RBL5GA</td><td class="r">11,901</td><td class="r">14</td><td class="r">166,619</td><td><span class="pill pr">Review</span></td></tr>
+        <tr><td class="vn">SMEG</td><td style="font-size:11px;color:var(--mid)">Awad Badi Al Nahas Trading</td><td>Refrigerators</td><td style="font-family:monospace;font-size:11.5px">FAB28RDUJ5GA</td><td class="r">11,901</td><td class="r">15</td><td class="r">178,520</td><td><span class="pill pr">Review</span></td></tr>
+        <tr><td class="vn">Otath</td><td style="font-size:11px;color:var(--mid)">True Innovation Trading Co.</td><td>Outdoor Sets</td><td style="font-family:monospace;font-size:11.5px">HC-TD-1036</td><td class="r">6,006</td><td class="r">100</td><td class="r">600,600</td><td><span class="pill pg">Scale</span></td></tr>
+        <tr><td class="vn">Otath</td><td style="font-size:11px;color:var(--mid)">True Innovation Trading Co.</td><td>Outdoor Sets</td><td style="font-family:monospace;font-size:11.5px">HC-TD-1037</td><td class="r">6,006</td><td class="r">100</td><td class="r">600,600</td><td><span class="pill pg">Scale</span></td></tr>
+        <tr><td class="vn">Alhome</td><td style="font-size:11px;color:var(--mid)">Hadnah Al Afkar Company</td><td>Living Room Sets</td><td style="font-family:monospace;font-size:11.5px">AL-141</td><td class="r">5,863</td><td class="r">98</td><td class="r">574,574</td><td><span class="pill pg">Priority</span></td></tr>
+        <tr><td class="vn">Oak</td><td style="font-size:11px;color:var(--mid)">More Creative Digital Mktg</td><td>Sectionals</td><td style="font-family:monospace;font-size:11.5px">OAK2025030061</td><td class="r">5,666</td><td class="r">50</td><td class="r">283,300</td><td><span class="pill pa">Watch</span></td></tr>
+        <tr><td class="vn">In-House</td><td style="font-size:11px;color:var(--mid)">In House</td><td>Recliners</td><td style="font-family:monospace;font-size:11.5px">905152-B-INH</td><td class="r">2,299</td><td class="r">100</td><td class="r">229,900</td><td><span class="pill pg">Maintain</span></td></tr>
+        <tr><td class="vn">LOWHA</td><td style="font-size:11px;color:var(--mid)">Jaz Electronic Technology</td><td>Paintings & Pictures</td><td style="font-family:monospace;font-size:11.5px">LWHCNVVJ0D-CV4098</td><td class="r">1,399</td><td class="r">100</td><td class="r">139,900</td><td><span class="pill pg">Scale</span></td></tr>
+        <tr><td class="vn">WEFT</td><td style="font-size:11px;color:var(--mid)">Ramz Furniture Trading Co.</td><td>Rugs</td><td style="font-family:monospace;font-size:11.5px">8062_441_66_6558</td><td class="r">1,150</td><td class="r">17</td><td class="r">19,550</td><td><span class="pill pr">Review</span></td></tr>
+        <tr><td class="vn">Back Comfort</td><td style="font-size:11px;color:var(--mid)">Back Comfort Trading</td><td>Ergonomics</td><td style="font-family:monospace;font-size:11.5px">—</td><td class="r">—</td><td class="r">—</td><td class="r">—</td><td><span class="pill pa">Watch</span></td></tr>
+      </tbody>
+    </table>
+    <div class="fn">Top 2 per vendor by unit price, active SKUs with stock > 0. Dynamics entity names shown for Procurement cross-reference.</div>
+  </div>
+  <div class="bot"></div>
+  <div class="nav"><span></span><span></span><span></span><span></span><span></span><span></span><span class="on"></span><span></span><span></span><span></span></div>
+</div>
+
+<!-- S8 COMMISSION FRAMEWORK -->
+<div class="slide" id="s8">
+  <div class="bar"></div>
+  <div class="sh"><div><div class="eye">Commission Framework</div><div class="stit">Flat 20% + Two Structural Rules</div><div class="ssub">Simple to communicate · Fair to the platform · Accountability built in for underperformers</div></div></div>
+  <div class="divv"></div>
+  <div class="body">
+    <div style="display:flex;gap:24px;margin-bottom:20px;align-items:stretch">
+      <div style="background:var(--red);border-radius:8px;padding:24px 32px;text-align:center;flex-shrink:0;display:flex;flex-direction:column;justify-content:center">
+        <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:6px">Standard Rate</div>
+        <div style="font-size:72px;font-weight:700;color:#fff;line-height:1">20%</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.75);margin-top:6px">Flat · All 9 Vendors</div>
+      </div>
+      <div style="flex:1;display:flex;flex-direction:column;gap:12px">
+        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:14px 18px">
+          <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--mid);margin-bottom:5px">How commission works</div>
+          <div style="font-size:13px;color:var(--dark);line-height:1.65">Al Rugaib collects <strong>100% of the customer payment</strong> (product + delivery). Commission is deducted at source before vendor settlement. Calculated on the <strong>final customer-paid price including delivery, net of confirmed returns</strong>. One monthly settlement cycle, itemized statement issued 5 days prior.</div>
+        </div>
+        <div style="display:flex;gap:12px">
+          <div style="flex:1;background:var(--amber-dim);border:1px solid var(--amber);border-radius:6px;padding:12px 16px">
+            <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--amber);margin-bottom:5px">Rule 1 — Delivery Fee Deduction</div>
+            <div style="font-size:12px;color:var(--dark);line-height:1.6">Applies only where <strong>Al Rugaib handles last-mile delivery</strong> (Model B). Logistics cost recovery deducted from net settlement before 20% commission is applied.<br><br><strong>SAR 25/order</strong> — items ≤ 70×70×80 cm<br><strong>SAR 40/order</strong> — items above threshold</div>
+          </div>
+          <div style="flex:1;background:var(--red-dim);border:1px solid var(--red);border-radius:6px;padding:12px 16px">
+            <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--red);margin-bottom:5px">Rule 2 — Return Rate Penalty</div>
+            <div style="font-size:12px;color:var(--dark);line-height:1.6">Applies to <strong>any vendor</strong> whose return rate breaches the threshold. Automatic — no manual intervention.<br><br><strong>Trigger:</strong> RR > 7% for 60 consecutive days<br><strong>Penalty:</strong> Commission steps to <strong>23%</strong><br><strong>Exit:</strong> Reverts to 20% when RR &lt; 5% for 30 days</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;gap:10px">
+      <div style="flex:1;background:var(--red-dim);border:1px solid var(--red);border-radius:6px;padding:10px 14px;text-align:center">
+        <div style="font-size:10px;color:var(--red);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px">Penalty applies now</div>
+        <div style="font-size:15px;font-weight:700;color:var(--red)">WEFT · Oak</div>
+        <div style="font-size:11px;color:var(--mid)">RR > 10% · 23% rate on contract execution</div>
+      </div>
+      <div style="flex:1;background:var(--amber-dim);border:1px solid var(--amber);border-radius:6px;padding:10px 14px;text-align:center">
+        <div style="font-size:10px;color:var(--amber);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px">At threshold — 60-day watch</div>
+        <div style="font-size:15px;font-weight:700;color:var(--amber)">Otath</div>
+        <div style="font-size:11px;color:var(--mid)">RR 7.0% · Sitting exactly on the trigger line</div>
+      </div>
+      <div style="flex:2;background:var(--green-dim);border:1px solid var(--green);border-radius:6px;padding:10px 14px;text-align:center">
+        <div style="font-size:10px;color:var(--green);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px">Standard 20% — clean</div>
+        <div style="font-size:15px;font-weight:700;color:var(--green)">Alhome · Royal · LOWHA · In-House · Back Comfort · SMEG</div>
+        <div style="font-size:11px;color:var(--mid)">RR below threshold · No additional deductions</div>
+      </div>
+    </div>
+  </div>
+  <div class="bot"></div>
+  <div class="nav"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span class="on"></span><span></span><span></span></div>
+</div>
+
+<!-- S10 TRIAGE FRAMEWORK -->
+<div class="slide" id="s9">
+  <div class="bar"></div>
+  <div class="sh"><div><div class="eye">Strategic Recommendation</div><div class="stit">Four-Tier Vendor Allocation Framework</div><div class="ssub">Procurement alignment required on Tiers III & IV · H2 2026 execution</div></div></div>
+  <div class="divv"></div>
+  <div class="body">
+    <div class="tier-grid">
+      <div class="tcard tr">
+        <div class="tt" style="color:var(--red)">Tier I — Priority Scale</div>
+        <div class="chips"><span class="chip" style="background:var(--red-dim);color:var(--red)">Alhome</span><span class="chip" style="background:var(--red-dim);color:var(--red)">Royal</span></div>
+        <p>Combined SAR 1.73M (63.6%). Highest order velocity and lowest return friction. Commission: flat 20%, no penalty trigger active. Any SKU from these vendors that crosses the agreed sales volume threshold enters priority sourcing automatically. Dead SKU rule applies — non-performing listings delisted at day 120.</p>
+        <div class="tstats">
+          <div><div class="sv" style="color:var(--red)">SAR 1.73M</div><div class="sl">Combined Net</div></div>
+          <div><div class="sv" style="color:var(--red)">634</div><div class="sl">Orders</div></div>
+          <div><div class="sv" style="color:var(--red)">20%</div><div class="sl">Commission</div></div>
+        </div>
+      </div>
+      <div class="tcard tg">
+        <div class="tt" style="color:var(--green)">Tier II — Scale & Expand</div>
+        <div class="chips"><span class="chip" style="background:var(--green-dim);color:var(--green)">Otath</span><span class="chip" style="background:var(--green-dim);color:var(--green)">LOWHA</span><span class="chip" style="background:var(--green-dim);color:var(--green)">In-House</span></div>
+        <p>SAR 699K combined. Catalog expansion and increased marketing exposure are the growth lever. Otath sits exactly on the 7% RR penalty trigger — 60-day monitoring window begins on contract execution. In-House previously at 18%, now aligned to 20% flat. PL fast-track threshold rule applies to all three once volume threshold is agreed with Procurement.</p>
+        <div class="tstats">
+          <div><div class="sv" style="color:var(--green)">SAR 699K</div><div class="sl">Combined Net</div></div>
+          <div><div class="sv" style="color:var(--green)">482</div><div class="sl">Orders</div></div>
+          <div><div class="sv" style="color:var(--green)">20%</div><div class="sl">Commission</div></div>
+        </div>
+      </div>
+      <div class="tcard ta">
+        <div class="tt" style="color:var(--amber)">Tier III — Conditional Continuation</div>
+        <div class="chips"><span class="chip" style="background:var(--amber-dim);color:var(--amber)">Oak</span><span class="chip" style="background:var(--amber-dim);color:var(--amber)">Back Comfort</span></div>
+        <p>Oak's 10.8% RR means 23% penalty rate applies immediately on contract execution. 90-day cure window: RR must drop below 5% or contract review triggers. Back Comfort: 417 SKUs generating only 44 orders — dead SKU rule will significantly reduce their active catalog. Flat 20% applies.</p>
+        <div class="tstats">
+          <div><div class="sv" style="color:var(--amber)">Oak: 23%</div><div class="sl">Penalty Rate</div></div>
+          <div><div class="sv" style="color:var(--amber)">B.Comfort: 20%</div><div class="sl">Standard Rate</div></div>
+        </div>
+      </div>
+      <div class="tcard tx">
+        <div class="tt" style="color:var(--light)">Tier IV — Restructure or Exit</div>
+        <div class="chips"><span class="chip" style="background:#F5F0EE;color:#C07070">WEFT</span><span class="chip" style="background:#F5F0EE;color:#C07070">SMEG</span></div>
+        <p>WEFT: 11.2% RR + lowest current commission (15%) = most commercially misaligned vendor. New rate: 23% penalty applies immediately. 88 SKUs — dead SKU delist rule will likely remove a significant portion. SMEG: outside core category, flat 20%. Both on formal 60-day review with defined exit criteria if no improvement.</p>
+        <div class="tstats">
+          <div><div class="sv" style="color:#C07070">WEFT: 23%</div><div class="sl">Penalty Rate</div></div>
+          <div><div class="sv" style="color:#C07070">SMEG: 20%</div><div class="sl">Standard Rate</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bot"></div>
+  <div class="nav"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span class="on"></span><span></span></div>
+</div>
+
+<!-- S11 CLOSE -->
+<div class="slide" id="s10">
+  <div class="bar"></div>
+  <div style="position:absolute;right:0;top:0;bottom:0;width:340px;overflow:hidden;opacity:0.04;background:repeating-linear-gradient(-45deg,var(--red) 0px,var(--red) 2px,transparent 2px,transparent 20px)"></div>
+  <div style="display:flex;flex-direction:column;justify-content:center;height:100%;padding:0 80px;position:relative;z-index:2;text-align:center">
+    <div style="font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--red);margin-bottom:14px">Next Steps · Procurement Alignment Required</div>
+    <div style="font-family:'Playfair Display',serif;font-size:44px;color:var(--dark)">Four Asks to <span style="color:var(--red)">Close the Gaps</span></div>
+    <div style="font-size:14px;color:var(--mid);margin-top:12px;max-width:640px;margin-left:auto;margin-right:auto;line-height:1.7">The commission framework is simple. The catalog rules are automatic. The accountability is built in. These asks turn the structure into a live governance system.</div>
+    <div style="display:flex;gap:16px;margin-top:40px;justify-content:center">
+      <div style="background:var(--bg2);border:1px solid var(--border);border-top:3px solid var(--red);border-radius:6px;padding:18px 20px;text-align:left;width:212px">
+        <div style="font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin-bottom:8px;font-weight:700">Ask 01 · Commission</div>
+        <div style="font-size:12px;font-weight:500;color:var(--dark);line-height:1.6">Approve 20% flat rate across all 9 vendors with delivery fee deduction and RR penalty trigger as standard contract terms effective next renewal</div>
+      </div>
+      <div style="background:var(--bg2);border:1px solid var(--border);border-top:3px solid var(--red);border-radius:6px;padding:18px 20px;text-align:left;width:212px">
+        <div style="font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin-bottom:8px;font-weight:700">Ask 02 · Sourcing</div>
+        <div style="font-size:12px;font-weight:500;color:var(--dark);line-height:1.6">Align with Procurement on the sales volume threshold that auto-triggers priority PL sourcing — bypassing standard quarterly buying cycles for proven high-velocity SKUs</div>
+      </div>
+      <div style="background:var(--bg2);border:1px solid var(--border);border-top:3px solid var(--red);border-radius:6px;padding:18px 20px;text-align:left;width:212px">
+        <div style="font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin-bottom:8px;font-weight:700">Ask 03 · Governance</div>
+        <div style="font-size:12px;font-weight:500;color:var(--dark);line-height:1.6">Approve dead SKU delist policy — 30-day vendor notice at 90 days zero sales, hard delist at 120 days — and mandate last-mile tracking integration within 30 days</div>
+      </div>
+      <div style="background:var(--bg2);border:1px solid var(--border);border-top:3px solid var(--red);border-radius:6px;padding:18px 20px;text-align:left;width:212px">
+        <div style="font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin-bottom:8px;font-weight:700">Ask 04 · Triage</div>
+        <div style="font-size:12px;font-weight:500;color:var(--dark);line-height:1.6">Initiate formal 60-day review for WEFT and SMEG — 23% penalty rate applies to WEFT immediately — with defined exit criteria if KPI floors are not met by day 60</div>
+      </div>
+    </div>
+  </div>
+  <div style="position:absolute;bottom:32px;right:60px;font-size:11px;color:var(--light);letter-spacing:1px">E-Commerce Division · Al Rugaib Furniture · June 2026</div>
+  <div class="bot"></div>
+  <div class="nav"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span class="on"></span></div>
+</div>
+
+</div>
+</body>
+</html>
